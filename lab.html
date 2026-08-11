@@ -1,104 +1,297 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab | Jim Andrews</title>
     <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #2b6cb0;
+            --accent-hover: #2c5282;
+            --text: #2d3748;
+            --text-light: #4a5568;
+            --bg: #f7fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+
+        nav {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        nav .nav-inner {
             max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
         }
+
         nav a {
-            margin-right: 20px;
             text-decoration: none;
-            color: #1a73e8;
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
-        h2 {
-            border-bottom: 1px solid #ccc;
-            margin-top: 30px;
+
+        nav a:hover {
+            color: var(--accent-hover);
         }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .logo-wrap {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo-wrap img {
+            max-width: 100%;
+            width: 380px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        section {
+            background: var(--card);
+            padding: 1.75rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+        }
+
+        section h2 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+            font-weight: 600;
+        }
+
+        section p {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul.simple-list {
+            list-style: none;
+        }
+
+        ul.simple-list li {
+            position: relative;
+            padding-left: 1.15rem;
+            margin-bottom: 0.45rem;
+            color: var(--text);
+            font-size: 0.98rem;
+        }
+
+        ul.simple-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .team-group {
+            margin-bottom: 1.35rem;
+        }
+
+        .team-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .team-group h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 0.65rem;
+            font-weight: 600;
+        }
+
         .member {
-            margin-bottom: 10px;
+            margin-bottom: 0.85rem;
+            padding-left: 0.15rem;
+            font-size: 0.97rem;
+            line-height: 1.5;
+        }
+
+        .member strong {
+            color: var(--text);
+        }
+
+        .member .role {
+            color: var(--text-light);
+            font-size: 0.93rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: block;
+        }
+
+        .gallery p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.35rem;
+        }
+
+        @media (max-width: 640px) {
+            nav .nav-inner {
+                gap: 1.25rem;
+            }
+
+            section {
+                padding: 1.25rem 1.5rem;
+            }
+
+            .logo-wrap img {
+                width: 280px;
+            }
         }
     </style>
 </head>
-
 <body>
 
-<nav><center>
-    <a href="index.html">Home</a>
-    <a href="publications.html">Publications</a>
-    <a href="lab.html">Lab</a>
-</nav></center>
+<nav>
+    <div class="nav-inner">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="lab.html">Lab</a>
+    </div>
+</nav>
 
+<main>
+    <div class="logo-wrap">
+        <img src="HIRL_logo.png" alt="Health Informatics Research Lab logo">
+    </div>
 
-<div>
-    <img src="HIRL_logo.png" alt="Lab Logo" width="400">
- </div>
+    <section>
+        <h2>Overview</h2>
+        <p>
+            The Health Informatics Research Lab focuses on advancing research in health data science, evidence synthesis, and biomedical information systems. The lab integrates methodological research with applied health questions to improve evidence-based decision making.
+        </p>
+    </section>
 
+    <section>
+        <h2>Research Areas</h2>
+        <ul class="simple-list">
+            <li>Systematic review methods</li>
+            <li>Biomedical standards and terminologies</li>
+            <li>Health data analytics</li>
+        </ul>
+    </section>
 
-    
-<h2>Overview</h2>
-<p>
-The Health Informatics Research Lab focuses on advancing research in
-health data science, evidence synthesis, and biomedical information systems.
-The lab integrates methodological research with applied health questions
-to improve evidence-based decision making.
-</p>
+    <section>
+        <h2>Team Members</h2>
 
-<h2>Research Areas</h2>
-<ul>
-    <li>Systematic review methods</li>
-    <li>Biomedical standards and terminologies</li>
-    <li>Health data analytics</li>
-</ul>
+        <div class="team-group">
+            <h3>Directors</h3>
+            <div class="member">
+                <strong>James E. Andrews, Ph.D.</strong> (USF School of Information)<br>
+                <span class="role">Professor of Informatics<br>William W. and Judith A. Gaunt Professor in Library and Information Science</span>
+            </div>
+            <div class="member">
+                <strong>Christina Eldredge, MD, Ph.D.</strong> (USF School of Information)<br>
+                <span class="role">Director of Health Informatics Programs<br>Email: celdredge2@usf.edu</span>
+            </div>
+        </div>
 
-<h2>Team Members</h2>
+        <div class="team-group">
+            <h3>Faculty</h3>
+            <div class="member">
+                <strong>Rebecca Vandewalle, Ph.D.</strong><br>
+                <span class="role">Assistant Professor — School of Information</span>
+            </div>
+            <div class="member">
+                <strong>Cesar Lam, MD</strong><br>
+                <span class="role">Moffitt Cancer Center</span>
+            </div>
+        </div>
 
-<p><b>Directors</b></p>
-<div class="member"><b>James E. Andrews, Ph.D.</b> (USF School of Information)<br>
-Professor of Informatics<br>
-William W. and Judith A. Gaunt Professor in Library and Information Science</div>
-    <div class="member"> <b>Christina Eldredge, MD, Ph.D. </b> (USF School of Information)<br>
-    Director of Health Informatics Programs<br>
-    email: celdredge2_at_usf.edu</div>
+        <div class="team-group">
+            <h3>Students</h3>
+            <div class="member">Roy Chen (USF Med School)</div>
+            <div class="member">Niveditha Chandrakanth (BS Student — Chemistry)</div>
+            <div class="member">Chukwuma Okoroji (MA Student — Library and Information Science)</div>
+            <div class="member">Shazia Ali (BS Student — Chemistry)</div>
+            <div class="member">Julia Levine (BS Student — Chemistry)</div>
+            <div class="member">Sydney Lam (BS Student — Integrative Biology)</div>
+            <div class="member">Tashanua Houston (BS Student — Public Health)</div>
+            <div class="member">Jay Chandran (MS Student — Muma College of Business)</div>
+        </div>
+    </section>
 
-<p><b>Faculty</b></p>
-<div class="member">Rebecca Vandewalle, Ph.D. (Assistant Professor - School of Informaton)<br>
-</div>
-    <div class="member"> Cesar Lam, MD (Moffit Cancer Center)<br></div>
+    <section>
+        <h2>Projects and Activities</h2>
+        <p>
+            Below is an infographic of some of the projects the HIRL has been working on this past year, and images from events where our students presented.
+        </p>
+        <div class="gallery">
+            <div>
+                <img src="Projects.png" alt="HIRL projects infographic">
+            </div>
+            <div>
+                <img src="Evan.jpg" alt="Student presentation">
+            </div>
+            <div>
+                <img src="Taushauna.jpg" alt="Student presentation">
+            </div>
+            <div>
+                <img src="OneUSF.jpg" alt="OneUSF event">
+            </div>
+        </div>
+    </section>
 
-<p><b>Students</b></p>
-    <div class="member">Roy Chen (USF Med School)</div>
-    <div class="member">Niveditha Chandrakanth (BS Student - Chemistry)</div>
-    <div class="member">Chukwuma Okoroji (MA Student - Library and Information Science)</div>
-    <div class="member">Shazia Ali  (BS Student - Chemistry)</div>
-    <div class="member">Julia Levine  (BS Student - Chemistry</div>
-    <div class="member">Sydney Lam (BS Student - Integrative Biology)</div>
-    <div class="member">Tashanua Houston (BS Student - Public Health)</div>
-    <div class="member">Jay Chandran (MS Student - Muma Coll. of Business)</div>
-
-
-<h2>Projects and Activities</h2>
-<ul>
-    <li> Below is an infographic of some of the projects the HIRL has been working on this past year, and images from some events where our students presented. </li>
-<ul>
-<div>
-    <img src="Projects.png" alt="Lab Logo" width="500">
-   <p>
-    <img src="Evan.jpg" alt="Lab Logo" width="500">
-   <p>
-    <img src="Taushauna.jpg" alt="Lab Logo" width="500">
-   <p>
-    <img src="OneUSF.jpg" alt="Lab Logo" width="500">
-<p>
- </div>
-    
-<h2>Join the Lab</h2>
-<p>
-Interested students should contact with Dr. Eldredge  or Dr. Andrews via email. Please include your CV and a brief
-statement of research interests.
-</p>
+    <section>
+        <h2>Join the Lab</h2>
+        <p>
+            Interested students should contact Dr. Eldredge or Dr. Andrews via email. Please include your CV and a brief statement of research interests.
+        </p>
+    </section>
+</main>
 
 </body>
 </html>

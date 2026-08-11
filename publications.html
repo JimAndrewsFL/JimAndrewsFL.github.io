@@ -1,113 +1,234 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Publications - Jim Andrews</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Jim Andrews</title>
     <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #2b6cb0;
+            --accent-hover: #2c5282;
+            --text: #2d3748;
+            --text-light: #4a5568;
+            --bg: #f7fafc;
+            --card: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            min-height: 100vh;
+        }
+
+        nav {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        nav .nav-inner {
             max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
         }
+
         nav a {
-            margin-right: 20px;
             text-decoration: none;
-            color: #1a73e8;
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
-        h2 {
-            border-bottom: 1px solid #ccc;
+
+        nav a:hover {
+            color: var(--accent-hover);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        h1 {
+            font-size: 1.85rem;
+            color: var(--primary);
+            margin-bottom: 1.75rem;
+            font-weight: 700;
+        }
+
+        section {
+            background: var(--card);
+            padding: 1.75rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
+        }
+
+        section h2 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+            font-weight: 600;
+        }
+
+        ul.pub-list {
+            list-style: none;
+        }
+
+        ul.pub-list li {
+            position: relative;
+            padding-left: 1.15rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            font-size: 0.97rem;
+            line-height: 1.55;
+        }
+
+        ul.pub-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        ul.pub-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        ul.pub-list a {
+            color: var(--accent);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        ul.pub-list a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .note {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        @media (max-width: 640px) {
+            nav .nav-inner {
+                gap: 1.25rem;
+            }
+
+            section {
+                padding: 1.25rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.55rem;
+            }
         }
     </style>
 </head>
-
 <body>
 
-<nav><center>
-    <a href="index.html">Home</a>
-    <a href="publications.html">Publications</a>
-    <a href="lab.html">Lab</a></center>
+<nav>
+    <div class="nav-inner">
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="lab.html">Lab</a>
+    </div>
 </nav>
 
-<h1>Select Publications</h1>
-<h2>Book (Edited)</h2>
-    <li>Richesson RL, Andrews JE, Fultz-Hollis K, editors. Clinical research informatics. 3rd ed. London: Springer; June 2023.</li>
-<h2>Chapters</h2>
-    <li>Andrews JE. Clinical research informatics. In: Eldredge C, Rana AM, Feldman SS, Faysel MA, editors. Introduction to health informatics: A training handbook. Springer; 2026. p. 143-153. </li>
-<br>    
-    <li> Andrews JE. Information science: The basics. In: Eldredge C, Rana AM, Feldman SS, Faysel MA, editors. Introduction to health informatics: A training handbook. Springer; 2026. p. 31-40.</li>
-    <br>
-    
-    <li> Andrews JE, Eldredge C. Applequist, J, Johnson JD.  Evolving roles for patients in clinical research: Opportunities and challenges. In: Richesson RL Andrews JE, Fultz-Hollis, K, editors. Clinical research informatics. 3rd ed. London: Springer; June 2023. p. 473-494. </li>
+<main>
+    <h1>Select Publications</h1>
 
-<h2>Journal Articles</h2>
-<ul>
-    <li>Andrews JE, Chung E, Seo S, Yoon J. Scholarly communication trends in Library and Information Science over 80 Years: 1945-2024. Journal of Library and Information Science. Submitted</i>.</li>
-    <li>AChoi J, Chung E, Andrews JE, Yoon J. Representing LIS in open research information: analysis of OpenAlex, Web of Science, and Scopus. Journal of Documentation. Submitted</i>.</li>
-    <li> Andrews, JE, Yoon, J. Characteristics of Cancer Information Non-Seekers among Cancer Survivors. LIBRI. Submitted</li>
-    <li>Andrews JE and de la Peña McCook K. Incuriosity of librarians and media in non-traditional content and sources: the Twitter Files as a case study. Heterodoxy in the Stacks (Substack). July 10, 2025. https://hxlibraries.substack.com/p/incuriosity-of-librarians-and-media </li>
-<li> Yoon J, Andrews JE, Seo S, Park J, Chung E. Mapping the landscape of diamond open access journals with journal impact factors. J Scholarly Publishing; Advanced access: 17 March 2026. https://doi.org/10.3138/jsp-2025-0067</li>
-<li>Yoon J, Andrews JE, Seo S, and Chung E. Landscapes of information science and library science research: comparing funded and non-funded research from 2008-2023. Journal of Documentation, 2025; 81(5-6): 1509-1530  2025. https://doi.org/10.1108/JD-07-2025-0190</li>
-<li>Andrews JE, Applequist J, Ward HL, Fuzzell LN, Vadaparampil ST.  Cancer-related information behavior among Black and Hispanics in an NCI-designated comprehensive cancer center catchment. Patient Educ Counseling.  26 May 2023. https://doi.org/10.1016/j.pec.2023.107812 </li>
-<li>Andrews JE, Yoon J, Ward H. UTAUT as a model for understanding intention to adopt AI and related technologies among librarians. J of Acad Libr. 2021; 47(6). https://doi.org/10.1016/j.acalib.2021.102437    </li>
-<li> Armstrong J, Lynch K, Virgo KS, Schwartz MD, Friedman S, Dean M, Andrews JE,   
-Bourquardez-Clark B, Clasen J, Conaty J, Parrillo O, Sutphen,R.  Utilization, timing, and outcomes of BRCA genetic testing among women with newly diagnosed breast cancer from a national commercially insured population: The ABOARD study. JCO Oncology Practice. 2021; 172: e226-e235. https://doi.org/10.1200/OP.20.00571   
-</li>
-    <li>Andrews JE, Patrick TB, Richesson RL, Brown H, Krischer JP. Comparing heterogeneous SNOMED CT coding of clinical research concepts by examining normalized expressions. J Biomed Inform. 2008 Dec;41(6):1062-9. doi: 10.1016/j.jbi.2008.01.010. Epub 2008 Feb 5. PMID: 18328789; PMCID: PMC2605270</li>
-<li>Yoon J, Chung E, Hagen L, Heller T, Andrews JE, Scharf R. Use of multimedia tweets in health communication: analysis of tweets on the Zika virus. Information Research, 2019; 24:2.  
-http://InformationR.net/ir/24-2/paper823.html   
-</li>
-    <li>Yan S, Andrews JE, Huang H, Cannon P, Ping X. Reconstruction of MeSH to optimize literature retrieval and organization in stem cell research. BMC Med Inform Decis Mak. 
-2016; 16:54. https://doi.org/10.1186/s12911-016-0298-z   
-</li>
-    <li>Armstrong J, Toscano M, Kotchko N, Friedman S, Schwartz MD, Virgo KS, Lynch K, Andrews    
-JE, Aguado Loi CX, Bauer JE, Casares, C, Teten RT, Kondoff MR, Molina AD, Abdollahian M, Walker GS, Sutphen R. Utilization and outcomes of BRCA genetic testing and counseling in a national commercially insured population: The ABOUT study. JAMA Onc. 2015 Oct 1;1(9): 12511260.  https://doi.org/10.1001/jamaoncol.2015.3048   
-</li>
-    <li>Armstrong J, Toscano M, Kotchko N, Friedman S, Schwartz MD, Virgo KS, Lynch K, Andrews    
-JE, Aguado Loi CX, Bauer JE, Casares, C, Teten RT, Kondoff MR, Molina AD, Abdollahian M, Brand L, Walker GS, Sutphen R. American BRCA outcomes and utilization of testing – methodology model for personalized medicine/ patient-centered outcomes research in the real world. J of Gen Counsel. 2014 Sept 12; 24: 18-28.   https://doi.org/10.1007/s10897-014-9750-3 
-</li>
-    <li>Huang H, Apouey B, Andrews JE. Racial and ethnic disparities in awareness of genetic testing among online users: internet use, health knowledge and sociodemographic correlates. J Consume Health Internet. 2014 Mar; 18(1).  https://doi.org/10.1080/15398285.2014.869165</li>
-    <li>Richesson RL, Shereff D, Andrews JE. Standardization of Questions in Rare Disease Registries: The PRISM Library Project. Interact J Med Res. 2012 Oct 10;1(2):e10. doi: 10.2196/ijmr.2107.  PMID: 23611924; PMCID: PMC3626121.  </li>
-    <li>Huang H, Andrews JE, Tang J. Citation characterization and impact normalization in bioinformatics journals. J Am Soc f Info Sci Tech. 2012; 63(3), 490-497. https://doi.org/10.1002/asi.21707</li>
-    <li>Richesson R, Shereff D, Spisala C, Albarracin N, Konicek, Andrews JE. The use of  
-SNOMED CT to support retrieval and re-use of question and answer sets for patient registries. Int J Functional Informatics and PersMed. Special Issue: “The Informatics of Metadata, Questions and Value Sets,” 2010;3(4), 342-365. https://doi.org/10.1504/IJFIPM.2010.040214  
-</li>
-    <li>Andrews JE, Shereff D, Patrick TB, Richesson RL. The question about questions: Is DC a good choice to address the challenges of representation of clinical research questions and value sets? In D. Hillmann & M. Lauruhn editors, Proceedings of the 2010 Int’l Conf. on Dublin Core and Metadata Applications 2010 (pp. 88-93). Dublin Core Metadata Initiative.  
+    <section>
+        <h2>Book (Edited)</h2>
+        <ul class="pub-list">
+            <li>Richesson RL, Andrews JE, Fultz-Hollis K, editors. <em>Clinical Research Informatics</em>. 3rd ed. London: Springer; June 2023.</li>
+        </ul>
+    </section>
 
-</li>
-    <li>Lu HY, Andrews JE, Hou HY. Optimistic bias, information seeking and intention to undergo prostate cancer screening: A Taiwan study on male adults. J Mens Health. 2009 Sep;6(3):183-190. doi:  
-10.1016/j.jomh.2009.05.004. Epub 2009 Aug 11. PMID: 32288880; PMCID: PMC7102828.  
- 
-</li>
-    <li>Andrews JE, Patrick TB, Richesson RL, Brown H, Krischer JP. Comparing heterogeneous SNOMED CT coding of clinical research concepts by examining normalized expressions. J Biomed Inform. 2008 Dec;41(6):1062-9. doi: 10.1016/j.jbi.2008.01.010. Epub 2008 Feb 5. PMID: 18328789; PMCID: PMC2605270.  </li>
-    <li>Patrick TB, Richesson R, Andrews JE, Folk LC. SNOMED CT coding variation and grouping for "other findings" in a longitudinal study on urea cycle disorders. AMIA Annu Symp Proc. 2008 Nov  
-6;2008:11-5. PMID: 18998949; PMCID: PMC2656069
-</li>
-    <li>Andrews JE, Richesson RL, Krischer J. Variation of SNOMED CT coding of clinical research concepts among coding experts. J Am Med Inform Assoc. 2007 Jul-Aug;14(4):497-506. doi:  
-10.1197/jamia.M2372. Epub 2007 Apr 25. PMID: 17460128; PMCID: PMC2244907
-</li>
-    <li>For a full list of publications, please visit my CV on the home page</li>
-    
-</ul>
+    <section>
+        <h2>Chapters</h2>
+        <ul class="pub-list">
+            <li>Andrews JE. Clinical research informatics. In: Eldredge C, Rana AM, Feldman SS, Faysel MA, editors. <em>Introduction to Health Informatics: A Training Handbook</em>. Springer; 2026. p. 143-153.</li>
+            <li>Andrews JE. Information science: The basics. In: Eldredge C, Rana AM, Feldman SS, Faysel MA, editors. <em>Introduction to Health Informatics: A Training Handbook</em>. Springer; 2026. p. 31-40.</li>
+            <li>Andrews JE, Eldredge C, Applequist J, Johnson JD. Evolving roles for patients in clinical research: Opportunities and challenges. In: Richesson RL, Andrews JE, Fultz-Hollis K, editors. <em>Clinical Research Informatics</em>. 3rd ed. London: Springer; June 2023. p. 473-494.</li>
+        </ul>
+    </section>
 
+    <section>
+        <h2>Journal Articles</h2>
+        <ul class="pub-list">
+            <li>Andrews JE, Chung E, Seo S, Yoon J. Scholarly communication trends in Library and Information Science over 80 Years: 1945-2024. <em>Journal of Library and Information Science</em>. Submitted.</li>
+            <li>Choi J, Chung E, Andrews JE, Yoon J. Representing LIS in open research information: analysis of OpenAlex, Web of Science, and Scopus. <em>Journal of Documentation</em>. Submitted.</li>
+            <li>Andrews JE, Yoon J. Characteristics of Cancer Information Non-Seekers among Cancer Survivors. <em>LIBRI</em>. Submitted.</li>
+            <li>Andrews JE, de la Peña McCook K. Incuriosity of librarians and media in non-traditional content and sources: the Twitter Files as a case study. <em>Heterodoxy in the Stacks</em> (Substack). July 10, 2025. <a href="https://hxlibraries.substack.com/p/incuriosity-of-librarians-and-media" target="_blank" rel="noopener">Link</a></li>
+            <li>Yoon J, Andrews JE, Seo S, Park J, Chung E. Mapping the landscape of diamond open access journals with journal impact factors. <em>Journal of Scholarly Publishing</em>. Advanced access: 17 March 2026. <a href="https://doi.org/10.3138/jsp-2025-0067" target="_blank" rel="noopener">https://doi.org/10.3138/jsp-2025-0067</a></li>
+            <li>Yoon J, Andrews JE, Seo S, Chung E. Landscapes of information science and library science research: comparing funded and non-funded research from 2008-2023. <em>Journal of Documentation</em>. 2025; 81(5-6): 1509-1530. <a href="https://doi.org/10.1108/JD-07-2025-0190" target="_blank" rel="noopener">https://doi.org/10.1108/JD-07-2025-0190</a></li>
+            <li>Andrews JE, Applequist J, Ward HL, Fuzzell LN, Vadaparampil ST. Cancer-related information behavior among Black and Hispanics in an NCI-designated comprehensive cancer center catchment. <em>Patient Education and Counseling</em>. 26 May 2023. <a href="https://doi.org/10.1016/j.pec.2023.107812" target="_blank" rel="noopener">https://doi.org/10.1016/j.pec.2023.107812</a></li>
+            <li>Andrews JE, Yoon J, Ward H. UTAUT as a model for understanding intention to adopt AI and related technologies among librarians. <em>Journal of Academic Librarianship</em>. 2021; 47(6). <a href="https://doi.org/10.1016/j.acalib.2021.102437" target="_blank" rel="noopener">https://doi.org/10.1016/j.acalib.2021.102437</a></li>
+            <li>Armstrong J, Lynch K, Virgo KS, Schwartz MD, Friedman S, Dean M, Andrews JE, Bourquardez-Clark B, Clasen J, Conaty J, Parrillo O, Sutphen R. Utilization, timing, and outcomes of BRCA genetic testing among women with newly diagnosed breast cancer from a national commercially insured population: The ABOARD study. <em>JCO Oncology Practice</em>. 2021; 17(2): e226-e235. <a href="https://doi.org/10.1200/OP.20.00571" target="_blank" rel="noopener">https://doi.org/10.1200/OP.20.00571</a></li>
+            <li>Andrews JE, Patrick TB, Richesson RL, Brown H, Krischer JP. Comparing heterogeneous SNOMED CT coding of clinical research concepts by examining normalized expressions. <em>Journal of Biomedical Informatics</em>. 2008 Dec;41(6):1062-9. <a href="https://doi.org/10.1016/j.jbi.2008.01.010" target="_blank" rel="noopener">doi: 10.1016/j.jbi.2008.01.010</a>. PMID: 18328789; PMCID: PMC2605270.</li>
+            <li>Yoon J, Chung E, Hagen L, Heller T, Andrews JE, Scharf R. Use of multimedia tweets in health communication: analysis of tweets on the Zika virus. <em>Information Research</em>. 2019; 24(2). <a href="http://InformationR.net/ir/24-2/paper823.html" target="_blank" rel="noopener">http://InformationR.net/ir/24-2/paper823.html</a></li>
+            <li>Yan S, Andrews JE, Huang H, Cannon P, Ping X. Reconstruction of MeSH to optimize literature retrieval and organization in stem cell research. <em>BMC Medical Informatics and Decision Making</em>. 2016; 16:54. <a href="https://doi.org/10.1186/s12911-016-0298-z" target="_blank" rel="noopener">https://doi.org/10.1186/s12911-016-0298-z</a></li>
+            <li>Armstrong J, Toscano M, Kotchko N, Friedman S, Schwartz MD, Virgo KS, Lynch K, Andrews JE, Aguado Loi CX, Bauer JE, Casares C, Teten RT, Kondoff MR, Molina AD, Abdollahian M, Walker GS, Sutphen R. Utilization and outcomes of BRCA genetic testing and counseling in a national commercially insured population: The ABOUT study. <em>JAMA Oncology</em>. 2015 Oct 1;1(9):1251-1260. <a href="https://doi.org/10.1001/jamaoncol.2015.3048" target="_blank" rel="noopener">https://doi.org/10.1001/jamaoncol.2015.3048</a></li>
+            <li>Armstrong J, Toscano M, Kotchko N, Friedman S, Schwartz MD, Virgo KS, Lynch K, Andrews JE, Aguado Loi CX, Bauer JE, Casares C, Teten RT, Kondoff MR, Molina AD, Abdollahian M, Brand L, Walker GS, Sutphen R. American BRCA outcomes and utilization of testing – methodology model for personalized medicine / patient-centered outcomes research in the real world. <em>Journal of Genetic Counseling</em>. 2014 Sept 12; 24:18-28. <a href="https://doi.org/10.1007/s10897-014-9750-3" target="_blank" rel="noopener">https://doi.org/10.1007/s10897-014-9750-3</a></li>
+            <li>Huang H, Apouey B, Andrews JE. Racial and ethnic disparities in awareness of genetic testing among online users: internet use, health knowledge and sociodemographic correlates. <em>Journal of Consumer Health on the Internet</em>. 2014 Mar; 18(1). <a href="https://doi.org/10.1080/15398285.2014.869165" target="_blank" rel="noopener">https://doi.org/10.1080/15398285.2014.869165</a></li>
+            <li>Richesson RL, Shereff D, Andrews JE. Standardization of Questions in Rare Disease Registries: The PRISM Library Project. <em>Interactive Journal of Medical Research</em>. 2012 Oct 10;1(2):e10. <a href="https://doi.org/10.2196/ijmr.2107" target="_blank" rel="noopener">doi: 10.2196/ijmr.2107</a>. PMID: 23611924; PMCID: PMC3626121.</li>
+            <li>Huang H, Andrews JE, Tang J. Citation characterization and impact normalization in bioinformatics journals. <em>Journal of the American Society for Information Science and Technology</em>. 2012; 63(3):490-497. <a href="https://doi.org/10.1002/asi.21707" target="_blank" rel="noopener">https://doi.org/10.1002/asi.21707</a></li>
+            <li>Richesson R, Shereff D, Spisala C, Albarracin N, Konicek, Andrews JE. The use of SNOMED CT to support retrieval and re-use of question and answer sets for patient registries. <em>International Journal of Functional Informatics and Personalised Medicine</em>. Special Issue: “The Informatics of Metadata, Questions and Value Sets,” 2010;3(4):342-365. <a href="https://doi.org/10.1504/IJFIPM.2010.040214" target="_blank" rel="noopener">https://doi.org/10.1504/IJFIPM.2010.040214</a></li>
+            <li>Andrews JE, Shereff D, Patrick TB, Richesson RL. The question about questions: Is DC a good choice to address the challenges of representation of clinical research questions and value sets? In: Hillmann D, Lauruhn M, editors. <em>Proceedings of the 2010 International Conference on Dublin Core and Metadata Applications</em>. Dublin Core Metadata Initiative; 2010. p. 88-93.</li>
+            <li>Lu HY, Andrews JE, Hou HY. Optimistic bias, information seeking and intention to undergo prostate cancer screening: A Taiwan study on male adults. <em>Journal of Men’s Health</em>. 2009 Sep;6(3):183-190. <a href="https://doi.org/10.1016/j.jomh.2009.05.004" target="_blank" rel="noopener">doi: 10.1016/j.jomh.2009.05.004</a>. PMID: 32288880; PMCID: PMC7102828.</li>
+            <li>Patrick TB, Richesson R, Andrews JE, Folk LC. SNOMED CT coding variation and grouping for “other findings” in a longitudinal study on urea cycle disorders. <em>AMIA Annual Symposium Proceedings</em>. 2008 Nov 6;2008:11-5. PMID: 18998949; PMCID: PMC2656069.</li>
+            <li>Andrews JE, Richesson RL, Krischer J. Variation of SNOMED CT coding of clinical research concepts among coding experts. <em>Journal of the American Medical Informatics Association</em>. 2007 Jul-Aug;14(4):497-506. <a href="https://doi.org/10.1197/jamia.M2372" target="_blank" rel="noopener">doi: 10.1197/jamia.M2372</a>. PMID: 17460128; PMCID: PMC2244907.</li>
+        </ul>
+        <p class="note">For a full list of publications, please visit my CV on the home page.</p>
+    </section>
 
-    <h2>Past Grant Activity</h2>
-<ul>
-    <li>Jeonbuk National University: Internationally Renowned Academic Research Support Program in Humanities and Social Sciences."A STUDY ON THE GLOBALIZATION OF SCHOLARLY COMMUNICATION" PI: JungWon Yoon; Co-PI James E. Andrews
-</li>
-    <li>Department of Defense, Cyber Scholarship Program (CySP). PI: James E. Andrews; Co-PI Randy Borum Funding Direct: $ 115,003.00 </li>
-    <li>National Cancer Institute. First Year Direct: $430,684 “IMPACT OF BRCA TESTING ON NEWLY DIAGNOSED U.S. BREAST CANCERPATIENTS”  PI: Rebecca Sutphen; Role: Co-I </li>
-    <li>R-PPRN-1306-0484 (Aetna Ins.) “ABOUT (AMERICAN BRCA OUTCOMES AND UTILIZATION OF TESTING) NETWORK”. PI Rebessa Sutphen; role - Co-I. </li>
-    <li>NIH/NLM. “PATIENT REGISTRY ITEM SPECIFICATION AND METADATA” Rachel Richess and James E. Andrews, Co-PIs. Direct funds: $972,000</li>
-    <li>SAgency for Healthcare Research and Quality (AHRQ). “INFORMATICS TO ENHANCE THE KENTUCKY AMBULATORY NETWORK: ieKAN”. Kevin Pearce and James Andrews, Co-PIs. Directo costs: $100,000</li>
-    <li>Center for Disease Control. “IMPROVING MEDICATION-RELATED OUTCOMES” Perrier, D. (PI, role" Co-I on scope project. Direct costs: $980,000</li>
-    
-</ul>
+    <section>
+        <h2>Past Grant Activity</h2>
+        <ul class="pub-list">
+            <li>Jeonbuk National University: Internationally Renowned Academic Research Support Program in Humanities and Social Sciences. “A Study on the Globalization of Scholarly Communication.” PI: JungWon Yoon; Co-PI: James E. Andrews.</li>
+            <li>Department of Defense, Cyber Scholarship Program (CySP). PI: James E. Andrews; Co-PI: Randy Borum. Funding Direct: $115,003.</li>
+            <li>National Cancer Institute. First Year Direct: $430,684. “Impact of BRCA Testing on Newly Diagnosed U.S. Breast Cancer Patients.” PI: Rebecca Sutphen; Role: Co-I.</li>
+            <li>R-PPRN-1306-0484 (Aetna Ins.). “ABOUT (American BRCA Outcomes and Utilization of Testing) Network.” PI: Rebecca Sutphen; Role: Co-I.</li>
+            <li>NIH/NLM. “Patient Registry Item Specification and Metadata.” Rachel Richesson and James E. Andrews, Co-PIs. Direct funds: $972,000.</li>
+            <li>Agency for Healthcare Research and Quality (AHRQ). “Informatics to Enhance the Kentucky Ambulatory Network: ieKAN.” Kevin Pearce and James Andrews, Co-PIs. Direct costs: $100,000.</li>
+            <li>Centers for Disease Control. “Improving Medication-Related Outcomes.” Perrier D. (PI); Role: Co-I on scope project. Direct costs: $980,000.</li>
+        </ul>
+    </section>
 
-<h2>Working Papers / Research Activity</h2>
-<ul>
-    <li>Ratkus E, Mouradian I, Eldredge C, Lam C, Andrews JE. Radiology contrast reactions:  Epidemiology, patient reported outcomes, and electronic health record documentation: a scoping review. In progress</li>
-    <li>Immune-relate Adverse Event novel concept discovery using LLMs and NLP</li>
-    <li>Standard terminologies as critical to accurate irAE identification and documentation</li>
-</ul>
+    <section>
+        <h2>Working Papers / Research Activity</h2>
+        <ul class="pub-list">
+            <li>Ratkus E, Mouradian I, Eldredge C, Lam C, Andrews JE. Radiology contrast reactions: Epidemiology, patient reported outcomes, and electronic health record documentation: a scoping review. In progress.</li>
+            <li>Immune-related Adverse Event novel concept discovery using LLMs and NLP.</li>
+            <li>Standard terminologies as critical to accurate irAE identification and documentation.</li>
+        </ul>
+    </section>
+</main>
 
 </body>
 </html>
